@@ -15,6 +15,10 @@
         android:textColor="@color/heading"
         android:textSize="120px"
         android:textStyle="bold"
+        android:shadowDx="0"
+        android:shadowDy="12"
+        android:shadowRadius="12"
+        android:shadowColor="@color/shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -28,6 +32,10 @@
         android:fontFamily="@font/balsamiqsans_regular"
         android:textColor="@color/font"
         android:textSize="60px"
+        android:shadowColor="@color/shadow"
+        android:shadowRadius="0.01"
+        android:shadowDy="7"
+        android:shadowDx="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -43,6 +51,7 @@
         android:textColor="@color/secfont"
         android:textSize="37dp"
         android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,7 +70,11 @@
         android:fontFamily="@font/fredokaone_regular"
         android:textColorHint="@color/button"
         android:textStyle="bold"
-        android:textSize="50px"
+        android:textSize="60px"
+        android:shadowColor="@color/shadow"
+        android:shadowRadius="0.01"
+        android:shadowDy="7"
+        android:shadowDx="0"
         android:textAlignment="center"
         app:backgroundTint="#5C6BC0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +82,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
+        app:layout_constraintVertical_bias="0.732"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -95,9 +109,13 @@
         android:background="@drawable/rounded"
         android:textStyle="bold"
         android:textColorHint="@color/button"
-        android:hint="Aw.. lets create one!"
+        android:hint="Aw.. lets create!"
         android:fontFamily="@font/fredokaone_regular"
-        android:textSize="50px"
+        android:textSize="60px"
+        android:shadowColor="@color/shadow"
+        android:shadowRadius="0.01"
+        android:shadowDy="7"
+        android:shadowDx="0"
         android:textAlignment="center"
         app:backgroundTint="#5C6BC0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +123,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.968" />
+        app:layout_constraintVertical_bias="0.968"
+        android:gravity="center_horizontal" />
 
     <View
         style="@style/Divider"
