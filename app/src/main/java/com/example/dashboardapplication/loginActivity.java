@@ -72,7 +72,7 @@ public class loginActivity extends AppCompatActivity {
     private void masuk(){
         preferences.setLoggedInUser(getBaseContext(),preferences.getRegisteredUser(getBaseContext()));
         preferences.setLoggedInStatus(getBaseContext(),true);
-        startActivity(new Intent(getBaseContext(),MainActivity.class));
+        startActivity(new Intent(getBaseContext(),dashboard.class));
         finish();
     }
     /* True jika parameter password sama dengan data password yang terdaftar dari

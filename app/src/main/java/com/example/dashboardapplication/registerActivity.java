@@ -2,6 +2,7 @@ package com.example.dashboardapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -61,6 +62,7 @@ ke LoginActivity dan Set User dan Password untuk data yang terdaftar */
         }else{
             preferences.setRegisteredUser(getBaseContext(),user);
             preferences.setRegisteredPass(getBaseContext(),password);
+            startActivity(new Intent(getBaseContext(),loginActivity.class));
             finish();
         }
     }
