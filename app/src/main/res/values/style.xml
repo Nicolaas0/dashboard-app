@@ -4,6 +4,11 @@
         <item name="android:layout_height">3dp</item>
         <item name="android:layout_width">480px</item>
         <item name="android:background">@color/white</item>
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowRadius">12</item>
+        <item name="android:shadowDx">12</item>
+        <item name="android:shadowDy">10</item>
+        <item name="background">@drawable/rounded</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">

@@ -13,4 +13,5 @@
     <color name="button">#FFFFFF</color>
     <color name="heading">#FFFFFF</color>
     <color name="shadow">#4B4B4B</color>
+    <color name="divider">#603F98</color>
 </resources>
