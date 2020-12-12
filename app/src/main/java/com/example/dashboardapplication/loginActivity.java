@@ -91,5 +91,8 @@ public class loginActivity extends AppCompatActivity {
     public void signup(View v){
         startActivity(new Intent(getBaseContext(), registerActivity.class));
     }
+    public void openDashboard(){
+        Intent intent = new Intent(this,dashboard.class);
+        startActivity(intent);}
         }
 

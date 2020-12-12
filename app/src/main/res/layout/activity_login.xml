@@ -108,7 +108,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.74"/>
+        app:layout_constraintVertical_bias="0.74"
+        android:onClick="signin"/>
 
     <ImageView
         android:layout_width="wrap_content"

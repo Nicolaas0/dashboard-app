@@ -78,4 +78,7 @@ ke LoginActivity dan Set User dan Password untuk data yang terdaftar */
     public void create(View v){
         razia();
     }
+    public void openlogin(){
+        Intent intent = new Intent(this,loginActivity.class);
+        startActivity(intent);}
     }
