@@ -76,6 +76,7 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <EditText
+        android:id="@+id/et_passlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded"
@@ -89,6 +90,7 @@
         app:layout_constraintVertical_bias="0.6"/>
 
     <Button
+        android:id="@+id/logbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded"
