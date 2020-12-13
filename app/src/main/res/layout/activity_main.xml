@@ -83,7 +83,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.732"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:onClick="login"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,7 +125,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.968"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:onClick="regist"/>
 
     <View
         style="@style/Divider"

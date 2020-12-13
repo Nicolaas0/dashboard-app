@@ -16,30 +16,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        button = findViewById(R.id.tologin);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openlogin();
-            }
-        });
-
-        button2 = findViewById(R.id.toregist);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openregist();
-            }
-        });
     }
 
+    public void login(View v){
+        openlogin();
+    }
+    public void regist(View v){
+        openregist();
+    }
     public void openlogin(){
-        Intent intent = new Intent(this,loginActivity.class);
-        startActivity(intent);
-    }
+        startActivity(new Intent(getBaseContext(),loginActivity.class));
+}
 
     public void openregist(){
-        Intent intent = new Intent(this,registerActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(getBaseContext(),registerActivity.class));
     }
 }
