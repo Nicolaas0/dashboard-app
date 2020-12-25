@@ -111,7 +111,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.828"
-        android:onClick="create"
+        android:onClick="submit"
         tools:ignore="MissingConstraints" />
 
     <ImageView
