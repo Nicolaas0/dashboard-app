@@ -73,7 +73,7 @@ public class registerActivity extends AppCompatActivity {
                 etName.setText("");
                 etPassword.setText("");
                 etRepassword.setText("");
-                Snackbar.make(findViewById(R.id.regisbutton),"Data berhasil di tambahkan",Snackbar.LENGTH_LONG).show();
+                openlogin();
             }
                 });
     }
