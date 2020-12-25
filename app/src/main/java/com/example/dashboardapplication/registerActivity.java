@@ -43,7 +43,7 @@ public class registerActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://dashboardapplication-48f2e-default-rtdb.firebaseio.com/");
     }
 
-    private void create(View v){
+    public void create(View v){
         if (!isEmpty(etName.getText().toString()) && !isEmpty(etPassword.getText().toString())
         ) submitUser(new User(etName.getText().toString(), etPassword.getText().toString())
         );
@@ -66,17 +66,14 @@ public class registerActivity extends AppCompatActivity {
                 OnSuccessListener<Void>() {
             @Override
                     public void onSuccess(Void aVoid){
-                etName.setText("");
-                etPassword.setText("");
-                etRepassword.setText("");
-                Snackbar.make(findViewById(R.id.regisbutton),"Data berhasil di tambahkan",Snackbar.LENGTH_LONG).show();
+                openlogin();
             }
                 });
     }
 
     public static Intent getActIntent(Activity activity) {
 // kode untuk pengambilan Intent
-        return new Intent(activity, registerActivity.class);
+        return new Intent(activity, loginActivity.class);
     }
 
     public void openlogin(){
