@@ -34,12 +34,12 @@ public class User implements Serializable {
     }
 
     @Override
-    public String  toString(){
+    public String toString(){
         return " " + name + "\n" +
                 " " + password;
     }
 
-    public User(String pss, String nm){
+    public User(String nm, String pss){
         name = nm;
         password = pss;
     }
