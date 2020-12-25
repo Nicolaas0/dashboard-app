@@ -39,7 +39,7 @@ public class User implements Serializable {
                 " " + password;
     }
 
-    public User(String s, String nm, String pss){
+    public User(String pss, String nm){
         name = nm;
         password = pss;
     }

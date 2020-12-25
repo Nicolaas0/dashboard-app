@@ -35,7 +35,7 @@ public class registerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
 
-        etName = (EditText) findViewById(R.id.et_userregist);
+        etName = findViewById(R.id.et_userregist);
         etPassword =findViewById(R.id.et_passregist);
         etRepassword =findViewById(R.id.et_repassregist);
         btnSubmit = findViewById(R.id.regisbutton);
@@ -45,8 +45,8 @@ public class registerActivity extends AppCompatActivity {
 
     private void create(){
         if (!isEmpty(etName.getText().toString()) && !isEmpty(etPassword.getText().toString())
-        && !isEmpty(etRepassword.getText().toString())) submitUser(new User(etName.getText().toString(),
-                etPassword.getText().toString(),etRepassword.getText().toString())
+        ) submitUser(new User(etName.getText().toString(),
+                etPassword.getText().toString())
         );
         else
             Snackbar.make(findViewById(R.id.regisbutton),"Data Tidak Boleh Kosong!",Snackbar.LENGTH_LONG).show();
