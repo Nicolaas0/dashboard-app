@@ -1,5 +1,6 @@
 package com.example.dashboardapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -15,8 +16,12 @@ import android.widget.EditText;
 import android.os.Bundle;
 
 import com.example.dashboardapplication.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,54 +34,42 @@ public class registerActivity extends AppCompatActivity {
     private EditText etPassword;
     private EditText etRepassword;
     private Button btnSubmit;
+    private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
 
+        firebaseAuth = firebaseAuth.getInstance();
         etName = findViewById(R.id.et_userregist);
-        etPassword =findViewById(R.id.et_passregist);
-        etRepassword =findViewById(R.id.et_repassregist);
+        etPassword = findViewById(R.id.et_passregist);
         btnSubmit = findViewById(R.id.regisbutton);
-
-        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://dashboardapplication-48f2e-default-rtdb.firebaseio.com/");
     }
 
-    public void create(View v){
-        if (!isEmpty(etName.getText().toString()) && !isEmpty(etPassword.getText().toString())
-        ) submitUser(new User(etName.getText().toString(), etPassword.getText().toString())
-        );
-        else
-            Snackbar.make(findViewById(R.id.regisbutton),"Data Tidak Boleh Kosong!",Snackbar.LENGTH_LONG).show();
-
-        InputMethodManager imm = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(etName.getWindowToken(),0);
+    public void submit(View v){
+        String username = etName.getText().toString();
+        String password = etPassword.getText().toString();
+        if (!isEmpty(username) && !isEmpty(password)){
+            createUser(username,password);
+        }
+        else {
+            Snackbar.make(findViewById(R.id.regisbutton),"Registration Failed.",Snackbar.LENGTH_LONG).show();
+        }
     }
 
-
-
-    private boolean isEmpty(String s){
-        return TextUtils.isEmpty(s);
-    }
-
-    private void submitUser(User user){
-        database.child("user").push().setValue(user).addOnSuccessListener(this,new
-                OnSuccessListener<Void>() {
+    public void createUser(String username, String password){
+        firebaseAuth.createUserWithEmailAndPassword(username,password).addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
             @Override
-                    public void onSuccess(Void aVoid){
+            public void onSuccess(AuthResult authResult) {
                 openlogin();
             }
-                });
-    }
-
-    public static Intent getActIntent(Activity activity) {
-// kode untuk pengambilan Intent
-        return new Intent(activity, loginActivity.class);
+        });
     }
 
     public void openlogin(){
-        Intent intent = new Intent(this,loginActivity.class);
-        startActivity(intent);}
+        Intent intent = new Intent (this,loginActivity.class);
+        startActivity(intent);
+    }
 }
