@@ -72,4 +72,9 @@ public class registerActivity extends AppCompatActivity {
         Intent intent = new Intent (this,loginActivity.class);
         startActivity(intent);
     }
+
+    public void goRegister(View v){
+        Intent intent = new Intent(this,registerActivity.class);
+        startActivity(intent);
+    }
 }
